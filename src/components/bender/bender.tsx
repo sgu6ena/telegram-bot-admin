@@ -6,8 +6,8 @@ const Bender: FC = () => {
       <div id="container" className="div">
       
         <div id="foot" className="div  left">
-          <div id="f1"></div>
-          <div id="f2"></div>
+          <div id="f1"  className="div"></div>
+          <div id="f2" className="div"></div>
         
         
           <div id="leg1" className="div  first">
