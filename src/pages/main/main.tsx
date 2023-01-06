@@ -3,16 +3,20 @@ import {FC, useEffect} from 'react';
 import {Segmented, Tabs} from 'antd';
 import Bender from "../../components/bender/bender";
 import {api} from "../../api/service";
+
 const items = [
-  { label: 'Новый пользователь', key: 'item-1', children: 'Content 1', }, // remember to pass the key prop
-  { label: 'Все пользователи', key: 'item-2', children: 'Content 2' },
+  {label: 'Новый пользователь', key: 'item-1', children: 'Content 1',}, // remember to pass the key prop
+  {label: 'Все пользователи', key: 'item-2', children: 'Content 2'},
 ];
 
-const Main:FC = () => {
+const Main: FC = () => {
   
-  useEffect(()=>{
-    api.getUser().then(console.log)
-  },[])
+  useEffect(() => {
+    // api.getUser().then(console.log)
+    fetch("https://mbase.idc.md/diplom/genre", {mode:'no-cors',credentials: 'include', redirect:'follow', headers:{     'Accept': 'application/json',
+        'Content-Type': 'application/json',}
+       }).then(console.log)
+  }, [])
   return (
     <div>
       {/*<Tabs*/}
@@ -25,8 +29,8 @@ const Main:FC = () => {
       {/*  size='large'*/}
       {/*  items={items}*/}
       {/*/>*/}
-      <div style={{display:'flex', justifyContent:'center'}}>
-        <Segmented  size="large" options={['Новый пользователь', 'Все пользователи']} />
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <Segmented size="large" options={['Новый пользователь', 'Все пользователи']}/>
       </div>
       
       <Bender/>
