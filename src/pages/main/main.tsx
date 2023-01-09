@@ -2,7 +2,8 @@ import {FC, useEffect} from 'react';
 
 import {Segmented, Tabs} from 'antd';
 import Bender from "../../components/bender/bender";
-import {api} from "../../api/service";
+import  {getGenre, getSending, getUser} from "../../api/service";
+
 
 const items = [
   {label: 'Новый пользователь', key: 'item-1', children: 'Content 1',}, // remember to pass the key prop
@@ -12,10 +13,8 @@ const items = [
 const Main: FC = () => {
   
   useEffect(() => {
-    // api.getUser().then(console.log)
-    fetch("https://mbase.idc.md/diplom/genre", {mode:'no-cors',credentials: 'include', redirect:'follow', headers:{     'Accept': 'application/json',
-        'Content-Type': 'application/json',}
-       }).then(console.log)
+
+    getSending().then(console.log)
   }, [])
   return (
     <div>
@@ -33,7 +32,7 @@ const Main: FC = () => {
         <Segmented size="large" options={['Новый пользователь', 'Все пользователи']}/>
       </div>
       
-      <Bender/>
+      {/*<Bender/>*/}
     </div>
   );
 };
