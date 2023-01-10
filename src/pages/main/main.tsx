@@ -1,8 +1,13 @@
-import {FC, useEffect} from 'react';
+import {FC, useEffect, useState} from 'react';
 
 import {Segmented, Tabs} from 'antd';
 import Bender from "../../components/bender/bender";
-import  {getGenre, getSending, getUser} from "../../api/service";
+import {getGenre, getSending, getUser} from "../../api/service";
+import {genre, sending, user} from "../../api/types";
+import Users from '../../components/user/users';
+import Genres from '../../components/genre/genres';
+import Sendings from '../../components/sending/sendings';
+
 
 
 const items = [
@@ -12,9 +17,14 @@ const items = [
 
 const Main: FC = () => {
   
+  const [users, setUsers] = useState<user[]|null>(null)
+  const [genres, setGenres] = useState<genre[]|null>(null)
+  const [sendings, setSendings] = useState<sending[]|null>(null)
+  
   useEffect(() => {
-
-    getSending().then(console.log)
+    getUser().then(setUsers)
+    getGenre().then(setGenres)
+    getSending().then(setSendings)
   }, [])
   return (
     <div>
@@ -29,8 +39,12 @@ const Main: FC = () => {
       {/*  items={items}*/}
       {/*/>*/}
       <div style={{display: 'flex', justifyContent: 'center'}}>
-        <Segmented size="large" options={['Новый пользователь', 'Все пользователи']}/>
+        <Segmented size="large" options={['Юзеры', 'Рассылки']}/>
       </div>
+      <Users users={users}/>
+      <Genres genres={genres}/>
+      <Sendings sendings={sendings}/>
+      
       
       {/*<Bender/>*/}
     </div>

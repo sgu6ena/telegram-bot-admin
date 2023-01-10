@@ -1,0 +1,23 @@
+.users {
+
+}
+
+.users ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.users ul li {
+    width: 300px;
+}
+
+@media (max-width: 500px) {
+    .users ul {
+        flex-direction: column;
+    }
+    .users ul li {
+        width: 100%;
+    }
+}
