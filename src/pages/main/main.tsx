@@ -1,19 +1,14 @@
 import {FC, useEffect, useState} from 'react';
 
 import {Segmented, Tabs} from 'antd';
-import Bender from "../../components/bender/bender";
+// import Bender from "../../components/bender/bender";
 import {getGenre, getSending, getUser} from "../../api/service";
 import {genre, sending, user} from "../../api/types";
 import Users from '../../components/user/users';
 import Genres from '../../components/genre/genres';
 import Sendings from '../../components/sending/sendings';
+import Bender from "../../components/bender/bender";
 
-
-
-const items = [
-  {label: 'Новый пользователь', key: 'item-1', children: 'Content 1',}, // remember to pass the key prop
-  {label: 'Все пользователи', key: 'item-2', children: 'Content 2'},
-];
 
 const Main: FC = () => {
   
@@ -46,7 +41,7 @@ const Main: FC = () => {
       <Sendings sendings={sendings}/>
       
       
-      {/*<Bender/>*/}
+      <Bender/>
     </div>
   );
 };
