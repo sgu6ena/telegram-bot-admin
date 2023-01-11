@@ -16,6 +16,8 @@ const UserPage: FC = () => {
   
   const isActive = (genreId: number) => Boolean(sortSending.find(sending => sending.genre_id ===genreId))
   
+  const sendingId = (genreId: number) => sortSending.find(sending => sending.genre_id ===genreId)?.id.toString()||null
+  
   const name = sortSending[0]?.user_name||'..'
   
   useEffect(() => {
@@ -29,7 +31,7 @@ const UserPage: FC = () => {
     <>
     <h1>{name}</h1>
     <ul style={{display:"flex", flexWrap:'wrap', gap:'20px', listStyleType:'none', padding:'20px'}}>
-      {genres.map(genre => <Genre genre={genre} active={isActive(genre.id)} userId={id || ''}/>)}
+      {genres.map(genre => <Genre genre={genre} isActive={isActive(genre.id)} userId={id || ''} sendingId={sendingId(genre.id)}/>)}
     </ul></>
   );
 };

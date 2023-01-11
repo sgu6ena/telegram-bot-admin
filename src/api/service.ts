@@ -23,12 +23,12 @@ export const getSending = async (): Promise<sending[]> => {
 };
 
 // post('/sending') - добавить рассылку, параметры user_id и genre_id
-export const postSending = async (user_id:string, genre_id:string): Promise<{ data: any }> => {
+export const postSending = async (user_id: string, genre_id: number): Promise<{ data: any }> => {
   const response = await api.post(`/sending`,{user_id, genre_id});
   return response.data.data
 };
 //delete('/sending/{id}') - удалить рассылку
-export const deleteSending = async (): Promise<{ data: any }> => {
-  const response = await api.delete(`/sending`);
+export const deleteSending = async (id:string): Promise<{ data: any }> => {
+  const response = await api.delete(`/sending/${id}`);
   return response.data.data
 };
