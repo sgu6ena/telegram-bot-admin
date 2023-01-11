@@ -11,7 +11,7 @@ const Users: FC<{ users: user[] | null }> = ({users}) => {
       <ul>
         {users ? users.map(user => <User user={user}/>) : <Spin/>}
         <li>
-          
+       
           <Card bordered={false} >
             <Meta style={{display:'flex', justifyContent:'center'}}
               avatar={<Avatar style={{backgroundColor: '#9966CC', }}size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 64, xxl: 64}}>
@@ -21,6 +21,7 @@ const Users: FC<{ users: user[] | null }> = ({users}) => {
                   description={'нового получателя'}
             />
           </Card>
+         
         </li>
       </ul>
     </div>

@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Main from "../../pages/main/main";
-import Users from "../../components/user/users";
+import UserPage from "../../pages/user/userPage";
 
 export enum RouteNames {
   MAIN = "/",
@@ -17,19 +17,19 @@ export interface IRoute {
 
 export const routes: IRoute[] = [
   {path: RouteNames.MAIN, element: <Main/>},
-  {path: RouteNames.USER, element: <Users users={[]}/>},
+  {path: RouteNames.USER, element: <UserPage/>},
   {path: "*", element: <Main/>},
 ];
 
 const AppRouter: FC = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         {routes.map((route) => (
           <Route path={route.path} element={route.element}  key={route.path} />
         ))}
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 

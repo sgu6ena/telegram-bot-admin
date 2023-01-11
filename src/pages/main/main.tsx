@@ -13,13 +13,13 @@ import Bender from "../../components/bender/bender";
 const Main: FC = () => {
   
   const [users, setUsers] = useState<user[]|null>(null)
-  const [genres, setGenres] = useState<genre[]|null>(null)
-  const [sendings, setSendings] = useState<sending[]|null>(null)
+  // const [genres, setGenres] = useState<genre[]|null>(null)
+ 
   
   useEffect(() => {
     getUser().then(setUsers)
-    getGenre().then(setGenres)
-    getSending().then(setSendings)
+    // getGenre().then(setGenres)
+
   }, [])
   return (
     <div>
@@ -33,12 +33,12 @@ const Main: FC = () => {
       {/*  size='large'*/}
       {/*  items={items}*/}
       {/*/>*/}
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <Segmented size="large" options={['Юзеры', 'Рассылки']}/>
-      </div>
+      {/*<div style={{display: 'flex', justifyContent: 'center'}}>*/}
+      {/*  <Segmented size="large" options={['Юзеры', 'Рассылки']}/>*/}
+      {/*</div>*/}
       <Users users={users}/>
-      <Genres genres={genres}/>
-      <Sendings sendings={sendings}/>
+      {/*<Genres genres={genres}/>*/}
+      {/*<Sendings sendings={sendings}/>*/}
       
       
       <Bender/>
