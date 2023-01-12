@@ -9,7 +9,7 @@ const Users: FC<{ users: user[] | null }> = ({users}) => {
   return (
     <div className={styles.users}>
       <ul>
-        {users ? users.map(user => <User user={user}/>) : <Spin/>}
+        {users ? users.map(user => <User user={user} key={user.id}/>) : <Spin/>}
         <li>
        
           <Card bordered={false} >

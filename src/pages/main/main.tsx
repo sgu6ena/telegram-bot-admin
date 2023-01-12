@@ -8,6 +8,8 @@ import Users from '../../components/user/users';
 import Genres from '../../components/genre/genres';
 import Sendings from '../../components/sending/sendings';
 import Bender from "../../components/bender/bender";
+import {Link} from "react-router-dom";
+import {RouteNames} from "../../core/router/router";
 
 
 const Main: FC = () => {
@@ -23,19 +25,7 @@ const Main: FC = () => {
   }, [])
   return (
     <div>
-      {/*<Tabs*/}
-      {/*  tabBarStyle={{color: 'white', fontSize:'45px'}}*/}
-      {/*  centered*/}
-      {/*  */}
-      {/*  tabBarGutter={10}*/}
-      {/*  defaultActiveKey="1"*/}
-      {/*  type="card"*/}
-      {/*  size='large'*/}
-      {/*  items={items}*/}
-      {/*/>*/}
-      {/*<div style={{display: 'flex', justifyContent: 'center'}}>*/}
-      {/*  <Segmented size="large" options={['Юзеры', 'Рассылки']}/>*/}
-      {/*</div>*/}
+      <h1>Получатели</h1>
       <Users users={users}/>
       {/*<Genres genres={genres}/>*/}
       {/*<Sendings sendings={sendings}/>*/}
