@@ -44,7 +44,8 @@ const UserPage: FC = () => {
         {
           isLoading ? <Spin/> :
             genres.map(genre => <Genre genre={genre} key={genre.id}
-                                       isActive={isActive(genre.id)} userId={id || ''}
+                                       isActive={isActive(genre.id)}
+                                       userId={id || ''}
                                        sendingId={sendingId(genre.id)}/>)}
       </ul>
     </>

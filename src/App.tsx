@@ -13,7 +13,7 @@ function App() {
           colorPrimary: '#279ad1',
           fontSize: 18,
           padding: 30,
-          colorBorder: 'white'
+          colorBorder: 'gray'
         },
       }}
     >

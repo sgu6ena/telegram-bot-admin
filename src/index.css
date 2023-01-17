@@ -840,15 +840,19 @@ code {
 }
 #b8:before {
   transform: skew(-5deg);
-  transform: skew(-5deg);
+
   left: 2px;
   border:1px solid #000;
   border-left:none;
 }
 #b8:after {
   transform: skew(5deg);
-  transform: skew(5deg);
+
   left: -2px;
   border:1px solid #000;
   border-right:none;
+}
+
+input{
+  border:1px solid grey;
 }

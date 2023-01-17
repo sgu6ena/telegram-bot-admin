@@ -5,7 +5,6 @@ import {Spin} from "antd";
 const Sendings: FC<{ sendings: sending[] | null}> = ({sendings}) => {
   return (
     <div>
-      {/*пользователи и рассылки*/}
       <ul>
         {sendings? sendings.map(sending => <li>{sending.user_name}:
           <ul>

@@ -3,7 +3,7 @@ import styles from "./styles.module.css"
 const Layout: FC<{children:React.ReactNode}> = ({children}) => {
   return (
     <div className={styles.layout}>
-      <h1>Telegram Bot Admin Panel</h1>
+      <h1>Mbase 2.0 Admin</h1>
       {children}
       <div className={styles.bottom}>
         {/*<img src="img/bg.jpg" alt=""/>*/}
