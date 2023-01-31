@@ -17,7 +17,7 @@ const Main: FC = () => {
     <div>
       <h1>Получатели</h1>
       <Users users={users}/>
-      {/*<Bender/>*/}
+      <Bender/>
     </div>
   );
 };
